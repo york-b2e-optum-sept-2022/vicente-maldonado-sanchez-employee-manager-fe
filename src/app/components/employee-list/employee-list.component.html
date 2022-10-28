@@ -1,5 +1,16 @@
+
+<div *ngIf="isCreating===false">
 <app-employee
   *ngFor="let employee of employeeList"
   [employee] = employee>
-
 </app-employee>
+  <button (click)="toggleInput(true)">New Employee</button>
+</div>
+
+<div
+*ngIf="isCreating===true">
+  <app-employee-input>
+
+  </app-employee-input>
+
+</div>

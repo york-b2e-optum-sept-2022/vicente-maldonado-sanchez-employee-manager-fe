@@ -1,0 +1,11 @@
+<form #newEmployee="ngForm" (ngSubmit)="addEmployee(newEmployee.form.value)">
+  <div class="form-group">
+    <input name="name" class="form-control" placeholder="name" ngModel/>
+  </div>
+  <div class="form-group">
+    <input name="role" class="form-control" placeholder="Title" ngModel/>
+  </div>
+
+  <button type="submit">Submit</button>
+  <button type="button" (click)="toggleInput(false)">Cancel</button>
+</form>

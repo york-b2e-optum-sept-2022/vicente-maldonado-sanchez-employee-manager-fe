@@ -1,8 +1,9 @@
 <div *ngIf="employee!==null">
-  <p>employee.name</p>
-  <p>employee.role</p>
-</div>
+  <p>Name: {{employee.name}}</p>
+  <p>Role: {{employee.role}}</p>
+
 
 <div>
-  <button (click)="deleteEmployee()">Delete</button>
+  <button (click)="deleteEmployee(employee.id)">Delete</button>
+</div>
 </div>

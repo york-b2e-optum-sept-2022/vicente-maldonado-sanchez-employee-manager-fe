@@ -9,9 +9,16 @@ import {StateService} from "../../services/state.service";
 })
 export class EmployeeListComponent implements OnInit {
 
-  employeeList!: IEmployee[];
+  isCreating: boolean = false;
 
+employeeList!:IEmployee[];
   constructor(private stateService: StateService) {
+    this.stateService.whenListUpdates().subscribe(employeeList => this.employeeList = [...employeeList])
+    this.stateService.$isCreating.subscribe(value =>this.isCreating=value)
+  }
+
+  toggleInput(key :boolean) {
+    this.stateService.toggleInput(key)
 
   }
 
