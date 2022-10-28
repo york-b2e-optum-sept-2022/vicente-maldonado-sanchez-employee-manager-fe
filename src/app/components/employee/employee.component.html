@@ -1,1 +1,8 @@
-<p>employee works!</p>
+<div *ngIf="employee!==null">
+  <p>employee.name</p>
+  <p>employee.role</p>
+</div>
+
+<div>
+  <button (click)="deleteEmployee()">Delete</button>
+</div>
