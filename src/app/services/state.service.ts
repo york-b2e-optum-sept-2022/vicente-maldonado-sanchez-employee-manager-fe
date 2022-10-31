@@ -15,7 +15,7 @@ export class StateService {
   $isCreating = new Subject<boolean>();
   newEmployee!:String;
 
-  constructor(private httpService: HttpService) {
+  constructor(private httpService: HttpService,) {
   this.httpService.getEmployeeList().subscribe(employeeList => this.$employeeList.next(employeeList))
   }
 
@@ -36,4 +36,6 @@ export class StateService {
   whenListUpdates(): Observable<IEmployee[]> {
     return this.$employeeList
   }
+
+
 }
